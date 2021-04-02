@@ -7,13 +7,14 @@
 
 namespace Orchestra.Services
 {
-    using System;
     using System.Threading.Tasks;
-    using Catel.MVVM;
     using Views;
 
     public partial interface IShellService
     {
+
+
+
         /// <summary>
         /// Gets the shell.
         /// </summary>

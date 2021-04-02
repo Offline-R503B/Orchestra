@@ -1,12 +1,56 @@
-﻿<windows:RibbonWindow x:Class="Orchestra.Views.ShellWindow"
+﻿<mah:MetroWindow  xmlns:mah="http://metro.mahapps.com/winfx/xaml/controls" x:Class="Orchestra.Views.ShellWindow"
                       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                       xmlns:windows="clr-namespace:Orchestra.Windows"
                       xmlns:orccontrols="http://schemas.wildgums.com/orc/controls" 
-                      xmlns:orctheming="http://schemas.wildgums.com/orc/theming"
+                      xmlns:orctheming="http://schemas.wildgums.com/orc/theming" 
+                  xmlns:Fluent="urn:fluent-ribbon" xmlns:hc="https://handyorg.github.io/handycontrol"
+                  ShowSystemMenuOnRightClick="False"                      
+                  ShowIconOnTitleBar="True"
+                  GlowBrush="{DynamicResource MahApps.Brushes.Accent}"
+                  x:Name="FluentShell"
                       ShowInTaskbar="True" ResizeMode="CanResize" WindowState="Maximized"
+                  Loaded="MetroWindow_Loaded"
                       Title="{Binding ElementName=ribbonContentControl, Path=Content.ViewModel.Title}">
 
+    <mah:MetroWindow.Resources>
+        <ResourceDictionary>
+                
+                <!-- Other app resources here -->
+            <ResourceDictionary.MergedDictionaries>
+                <hc:ThemeResources/>
+                <hc:Theme/>
+                <!-- MahApps.Metro resource dictionaries. Make sure that all file names are Case Sensitive! -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Controls.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Fonts.xaml" />
+                <!-- Theme setting -->
+                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Dark.Steel.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </mah:MetroWindow.Resources>
+    <mah:MetroWindow.TitleTemplate>
+        <DataTemplate>
+            <Fluent:RibbonTitleBar x:Name="RibbonTitleBar"                                   
+                                Header="{Binding Path=Title, RelativeSource={RelativeSource AncestorType=Window}}"/>
+        </DataTemplate>
+    </mah:MetroWindow.TitleTemplate>
+
+
+    <mah:MetroWindow.LeftWindowCommands>
+        <mah:WindowCommands>
+    </mah:WindowCommands>
+    </mah:MetroWindow.LeftWindowCommands>
+
+
+    <mah:MetroWindow.RightWindowCommands>
+        <mah:WindowCommands>
+            <Button x:Name="ProjectNameDisplay" Content="No project"/>
+        </mah:WindowCommands>
+    </mah:MetroWindow.RightWindowCommands>
+
+
+    <Grid>
+        
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
@@ -18,7 +62,9 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-
+        
+        
+        
         <ContentControl Grid.Row="0" x:Name="ribbonContentControl">
             <!-- Drop down arrow fix -->
             <ContentControl.Resources>
@@ -95,6 +141,11 @@
 
             <StatusBarItem x:Name="customStatusBarItem" HorizontalAlignment="Right" />
         </StatusBar>
+
+        </Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Right">
+            <StackPanel hc:Growl.GrowlParent="True" VerticalAlignment="Top" Margin="0,10,10,10"/>
+        </ScrollViewer>
     </Grid>
 
-</windows:RibbonWindow>
+</mah:MetroWindow>

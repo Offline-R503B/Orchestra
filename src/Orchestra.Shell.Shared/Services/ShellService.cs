@@ -10,6 +10,7 @@ namespace Orchestra.Services
     using System;
     using System.Threading.Tasks;
     using System.Windows;
+    using System.Windows.Controls;
     using Catel;
     using Catel.IoC;
     using Catel.Logging;
@@ -59,7 +60,7 @@ namespace Orchestra.Services
         /// <exception cref="ArgumentNullException">The <paramref name="dependencyResolver" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentNullException">The <paramref name="serviceLocator" /> is <c>null</c>.</exception>
         public ShellService(ITypeFactory typeFactory, IKeyboardMappingsService keyboardMappingsService, ICommandManager commandManager,
-            ISplashScreenService splashScreenService, IEnsureStartupService ensureStartupService, 
+            ISplashScreenService splashScreenService, IEnsureStartupService ensureStartupService,
             IApplicationInitializationService applicationInitializationService, IDependencyResolver dependencyResolver,
             IServiceLocator serviceLocator)
         {
@@ -96,6 +97,7 @@ namespace Orchestra.Services
         /// </summary>
         /// <value>The shell.</value>
         public IShell Shell { get; private set; }
+        public static UserControl GivenPoop { get; set; }
         #endregion
 
         #region Methods
@@ -118,6 +120,10 @@ namespace Orchestra.Services
                 Log.Debug("Showing splash screen");
 
                 var splashScreen = _splashScreenService.CreateSplashScreen();
+                if (GivenPoop != null)
+                {
+                    splashScreen.Content = GivenPoop;
+                }
                 splashScreen.Show();
 
                 shell = await CreateShellInternalAsync<TShell>(splashScreen.Close);

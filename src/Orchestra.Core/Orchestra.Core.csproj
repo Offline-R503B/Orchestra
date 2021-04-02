@@ -4,7 +4,7 @@
     <AssemblyName>Orchestra.Core</AssemblyName>
     <RootNamespace>Orchestra</RootNamespace>
     <DefaultLanguage>en-US</DefaultLanguage>
-    <PackageId>Orchestra.Core</PackageId>
+    <PackageId>WolvenKit.Orchestra.Core</PackageId>
     <PackageVersion>1.0.0-alpha0001</PackageVersion>
     <Description>Orchestra core library.</Description>
     <PackageTags>orc;orchestra;wpf;xaml</PackageTags>
@@ -20,6 +20,7 @@
   <PropertyGroup>
     <!-- SonarQube requires a project guid -->
     <ProjectGuid>C7049E9C-D258-4E3F-8DE3-17D8C50145CA</ProjectGuid>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
   
   <ItemGroup>

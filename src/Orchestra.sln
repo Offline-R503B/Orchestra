@@ -11,12 +11,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{DB
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{2FFC28B3-04F2-426B-B01A-003AB502371C}"
 	ProjectSection(SolutionItems) = preProject
-		Directory.build.project.props = Directory.build.project.props
-		Directory.build.props = Directory.build.props
-		Directory.build.shared.explicit.props = Directory.build.shared.explicit.props
-		Directory.build.shared.implicit.props = Directory.build.shared.implicit.props
-		Directory.build.shared.mat.props = Directory.build.shared.mat.props
-		Directory.build.targets = Directory.build.targets
 		GlobalSuppressions.cs = GlobalSuppressions.cs
 		MethodTimeLogger.cs = MethodTimeLogger.cs
 		SolutionAssemblyInfo.cs = SolutionAssemblyInfo.cs
@@ -31,18 +25,26 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Shell.MahApps", "Orchestra.Shell.MahApps\Orchestra.Shell.MahApps.csproj", "{084B7CDB-15B4-400A-B1EE-9596F1CBE6B2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Shell.Ribbon.Fluent", "Orchestra.Shell.Ribbon.Fluent\Orchestra.Shell.Ribbon.Fluent.csproj", "{BD65929C-36C0-4935-8D03-9AB82684C56D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE} = {EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Shell.TaskRunner", "Orchestra.Shell.TaskRunner\Orchestra.Shell.TaskRunner.csproj", "{D93A4322-36E1-4F2E-851A-FF2C7F6373C7}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Examples.MahApps", "Orchestra.Examples.MahApps\Orchestra.Examples.MahApps.csproj", "{BE068F99-1A40-4A4D-BF5E-80B2F1DD485D}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Examples.Ribbon.Fluent", "Orchestra.Examples.Ribbon.Fluent\Orchestra.Examples.Ribbon.Fluent.csproj", "{E1584C1C-2434-480D-A98E-617E42ED8021}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE} = {EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Examples.TaskRunner", "Orchestra.Examples.TaskRunner\Orchestra.Examples.TaskRunner.csproj", "{E291C61C-F854-42FD-90DF-A1BA53B6E24B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Orchestra.Tests", "Orchestra.Tests\Orchestra.Tests.csproj", "{46EE84D7-0EF8-46CD-8E0D-31C8BFBA06FF}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Orchestra.Examples.Shared", "Orchestra.Examples.Shared\Orchestra.Examples.Shared.shproj", "{0F4EE33D-8E27-43BA-BCF7-1C61CDCA09EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Fluent.Ribbon", "..\..\..\..\Downloads\Fluent.Ribbon-develop (1)\Fluent.Ribbon-develop\Fluent.Ribbon\Fluent.Ribbon.csproj", "{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -188,6 +190,22 @@ Global
 		{46EE84D7-0EF8-46CD-8E0D-31C8BFBA06FF}.Release|x64.Build.0 = Release|Any CPU
 		{46EE84D7-0EF8-46CD-8E0D-31C8BFBA06FF}.Release|x86.ActiveCfg = Release|Any CPU
 		{46EE84D7-0EF8-46CD-8E0D-31C8BFBA06FF}.Release|x86.Build.0 = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|ARM.ActiveCfg = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|ARM.Build.0 = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|x64.Build.0 = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Debug|x86.Build.0 = Debug|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|ARM.ActiveCfg = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|ARM.Build.0 = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|x64.ActiveCfg = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|x64.Build.0 = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|x86.ActiveCfg = Release|Any CPU
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -206,6 +224,7 @@ Global
 		{E291C61C-F854-42FD-90DF-A1BA53B6E24B} = {DBEB5ED3-4622-408E-92D9-EC60F316A5C9}
 		{46EE84D7-0EF8-46CD-8E0D-31C8BFBA06FF} = {250CAB0E-A7F8-495B-B090-DB0AF1D51514}
 		{0F4EE33D-8E27-43BA-BCF7-1C61CDCA09EC} = {DBEB5ED3-4622-408E-92D9-EC60F316A5C9}
+		{EFBEA021-D2FC-45E8-8F96-3E4DF57849CE} = {90FDC9B8-335D-49AF-99F2-E826E2A40F69}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {073E8F75-4201-49A3-BFBD-1B40D0B2E38A}

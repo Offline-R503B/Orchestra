@@ -9,6 +9,8 @@ namespace Orchestra.Views
 {
     using Catel.IoC;
     using Catel.Windows;
+    using ControlzEx.Theming;
+    using MahApps.Metro.Controls;
     using Services;
 
     /// <summary>
@@ -55,6 +57,28 @@ namespace Orchestra.Views
             contentControl.Content = mainView;
 
             ShellDimensionsHelper.ApplyDimensions(this, mainView);
+        }
+
+        private void MetroWindow_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        {
+
+            ThemeManager.Current.SyncTheme();
+           
+            
+            ThemeManager.Current.ThemeChanged += SyncThemes;
+
+
+
+        }
+
+        private void SyncThemes(object sender, ThemeChangedEventArgs e)
+        {
+            if (e.Target == this)
+            {
+                return;
+            }
+
+            ThemeManager.Current.ChangeTheme(this, e.NewTheme);
         }
     }
 }

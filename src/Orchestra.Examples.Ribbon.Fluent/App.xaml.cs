@@ -11,11 +11,11 @@ namespace Orchestra.Examples.Ribbon
     using System.Diagnostics;
     using System.Globalization;
     using System.Windows;
+    using System.Windows.Controls;
     using System.Windows.Media;
     using Catel.IoC;
     using Catel.Logging;
     using Catel.Services;
-    using Markup;
     using Orchestra.Services;
     using Orchestra.Views;
 
@@ -46,6 +46,7 @@ namespace Orchestra.Examples.Ribbon
 #if DEBUG
             LogManager.AddDebugListener(true);
 #endif
+            ShellService.GivenPoop = new UserControl1();
 
             var languageService = ServiceLocator.Default.ResolveType<ILanguageService>();
 
@@ -61,11 +62,19 @@ namespace Orchestra.Examples.Ribbon
             var serviceLocator = ServiceLocator.Default;
             var shellService = serviceLocator.ResolveType<IShellService>();
             shellService.CreateAsync<ShellWindow>();
+            //shellService.GivenBla = new UserControl1();
 
+            ShellWindow sh = (ShellWindow)shellService.Shell;
+
+            MahApps.Metro.Controls.WindowCommands windowCommands = new MahApps.Metro.Controls.WindowCommands();
+            Button tick = new Button();
+            tick.Content = "hello";
+            windowCommands.Items.Add(tick);
+            sh.LeftWindowCommands.Items.Add(windowCommands);
             _stopwatch.Stop();
 
             Log.Info("Elapsed startup stopwatch time: {0}", _stopwatch.Elapsed);
-            
+
         }
         #endregion
     }
