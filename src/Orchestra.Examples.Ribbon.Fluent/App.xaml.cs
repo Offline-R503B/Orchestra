@@ -46,7 +46,6 @@ namespace Orchestra.Examples.Ribbon
 #if DEBUG
             LogManager.AddDebugListener(true);
 #endif
-            ShellService.GivenPoop = new UserControl1();
 
             var languageService = ServiceLocator.Default.ResolveType<ILanguageService>();
 
@@ -70,7 +69,7 @@ namespace Orchestra.Examples.Ribbon
             Button tick = new Button();
             tick.Content = "hello";
             windowCommands.Items.Add(tick);
-            sh.LeftWindowCommands.Items.Add(windowCommands);
+            // sh.LeftWindowCommands.Items.Add(windowCommands);
             _stopwatch.Stop();
 
             Log.Info("Elapsed startup stopwatch time: {0}", _stopwatch.Elapsed);
