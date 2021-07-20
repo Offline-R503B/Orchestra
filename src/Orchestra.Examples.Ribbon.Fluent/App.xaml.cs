@@ -46,6 +46,7 @@ namespace Orchestra.Examples.Ribbon
 #if DEBUG
             LogManager.AddDebugListener(true);
 #endif
+            ShellService.GivenPoop = new UserControl1();
 
             var languageService = ServiceLocator.Default.ResolveType<ILanguageService>();
 
